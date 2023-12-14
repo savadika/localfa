@@ -1,0 +1,41 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">标题</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-gzname" data-rule="required" class="form-control" name="row[title]" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">浏览量</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-postdata1" data-rule="required" class="form-control" name="row[views]" type="text">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">分类id</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-postdata2" data-rule="required" class="form-control" name="row[category_id]" type="text">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">内容</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-postdata2" data-rule="required" class="form-control" name="row[content]" type="text">
+        </div>
+    </div>
+
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <!--            如果有自定义的行为，就需要用button，用submit的话会提交两次表单-->
+            <button type="button" class="btn btn-primary btn-embossed" id='testconfim'>{:__('OK')}</button>
+        </div>
+    </div>
+</form>

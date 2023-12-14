@@ -1,0 +1,38 @@
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <div id="toolbar" class="toolbar">
+                        <!--javascript:;可以实现A标签的点击事件运行时，如果页面内容很多，有滚动条时，页面不会乱跳，用户体验更好-->
+                        <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>
+                        <!--它是如何触发添加事件的，是btn-add按钮直接绑定了对应的add事件-->
+                        <a href="javascript:;" class="btn btn-success btn-add {:$auth->check('blog/content/add')?'':'hide'}" title="{:__('Add')}" ><i class="fa fa-plus"></i> {:__('Add')}</a>
+                        <a href="javascript:;" class="btn btn-success btn-edit btn-disabled disabled {:$auth->check('blog/content/edit')?'':'hide'}" title="{:__('Edit')}" ><i class="fa fa-pencil"></i> {:__('Edit')}</a>
+                        <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled {:$auth->check('blog/content/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>
+                        <!--如果想自己弹窗的话？两个不同的位置   -->
+                        <!-- 1   在表格外部的操作栏弹窗-->
+
+                        <!-- data-url,这里的这个地址用来返回iframe,要在控制器里写好返回iframe-->
+                        <a data-url="blog/content/test" href="javascript:;"  class="spec_add_btn" style="padding:0;" data-title="测试" >测试</a>
+
+
+
+                        <!--2  在操作栏的后面弹窗，这个需要到content.js里面进行操作-->
+
+                        <a class="btn btn-success btn-recyclebin btn-dialog {:$auth->check('blog/content/recyclebin')?'':'hide'}" href="blog/content/recyclebin" title="{:__('Recycle bin')}"><i class="fa fa-recycle"></i> {:__('Recycle bin')}</a>
+                    </div>
+                    <table id="table" class="table table-striped table-bordered table-hover table-nowrap"
+                           data-operate-edit="{:$auth->check('blog/content/edit')}"
+                           data-operate-del="{:$auth->check('blog/content/del')}"
+                           width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
